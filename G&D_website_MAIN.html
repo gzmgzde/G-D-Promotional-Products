@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&D Promosyon Ürünleri</title>
+    <style>
+        body{
+            background-color: black;
+            margin: 0;
+            font-family:'Fantasy', 'Copperplate', monospace;
+        }
+        nav{
+            color:aliceblue;
+            float: left;
+            display: block;
+            padding: 15px;
+            display: flex; 
+            align-items: center;
+            position: relative;
+            
+        }
+        nav img {
+            margin-right: 20px; 
+        }
+        nav a {
+            color: aliceblue;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 21px;
+            display: flex; /* Use flex to align items within */
+            align-items: center; /* Center vertically */
+            
+        }
+        
+
+        nav a:hover {
+            text-decoration:underline;
+            color:black;
+            background-color: aliceblue;
+            
+            
+        }
+
+        .basket-img {
+            width: 30px;
+            height: 30px;
+            margin-left: 5px; 
+            padding-block: 7px;
+        }
+        
+        .image-gallery {
+            display: flex;
+            overflow-x:scroll;
+            white-space: nowrap;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .image-gallery img {
+            width: 500px;
+            height: 250px;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px black;
+            transition: transform 0.3s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.1); /* Enlarge the image slightly on hover */
+        }
+
+        footer {
+            color: aliceblue;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        
+    </style>
+
+<script>
+    function changeImage(img) {
+        img.src = img.src.includes('shop_basket.png') ? 'basket_hover.png' : 'shop_basket.png';
+    }
+</script>
+</head>
+<body>
+    <nav>
+        <img src="G_D_logo.png" alt="G&D Logo" width="350px" >
+        <a href="#main" style="padding-left: 5px; padding-right: 5px; padding-block: 12px;"> Anasayfa </a>
+        <a href="#about"  style="padding-left: 5px; padding-right: 5px; padding-block: 12px;">Hakkımızda </a>
+        <a href="#products"  style="padding-left: 5px; padding-right: 5px; padding-block: 12px;">Ürünlerimiz </a>
+        <a href="#gallery"  style="padding-left: 5px; padding-right: 5px; padding-block: 12px;">Galeri </a>
+        <a href="#contact"  style="padding-left: 5px; padding-right: 5px; padding-block: 12px;">Bize Ulaşın </a>
+        <a href="#shop" style="margin-left: 500px; padding-right: 20px;" onmouseover="changeImage(this.querySelector('.basket-img'))" 
+   onmouseout="changeImage(this.querySelector('.basket-img'))">
+    <img src="shop_basket.png" alt="shopping basket" class="basket-img" style="width: 30px; height: 30px; margin-left: 20px;">
+    Sepetim 
+</a>
+    </nav>
+    <section id="gallery" class="image-gallery">
+        <img src="kalem.png" alt="Kalemler">
+        <img src="canta.png" alt="Bez çantalar">
+        <img src="defter.png" alt="Defterler">
+        <img src="tshirt.png" alt="T-shirtler">
+        <img src="kupa.png" alt="Kupalar">
+        <img src="takvim.png" alt="Takvimler">
+        <img src="altlik.png" alt="Bardak Altliklari">
+        <!-- Add more images as needed -->
+    </section>
+
+    <div id="main">
+        <p style="color: aliceblue;"> slvawkvjawmrv </p>
+
+    </div>
+    <footer>
+        <hr>
+        <p>&copy; 2024 G&D Promosyon Ürünleri LTD. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>
