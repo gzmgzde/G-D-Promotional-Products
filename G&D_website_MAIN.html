@@ -38,11 +38,12 @@
             display: flex;
             align-items: center;
             transition: background-color 0.3s ease, color 0.3s ease;
-            padding-left: 5px; padding-right: 5px;
+            
              
         }
         #navbar{
             padding-block: 12px;
+            padding-left: 5px; padding-right: 5px;
 
         }
 
@@ -53,11 +54,20 @@
             background-color: aliceblue;
         }
 
+        .icon-container {
+            margin-left: auto; /* Push the icons to the right */
+            display: flex;
+            gap: 6px; /* Space between icons */
+            align-items: center;
+        }
+
         .basket-img {
             width: 30px;
             height: 30px;
             margin-left: 5px;
             padding-block: 7px;
+            margin-right: 5px;
+            
         }
         
         /* Responsive Image Gallery */
@@ -80,31 +90,56 @@
         }
         .image-gallery img:hover {
             transform: scale(1.1);
+            cursor: pointer;
         }
 
         header {
-            text-align: center;
+            
             color: aliceblue;
             margin-top: 20px;
             padding: 40px 20px;
-            background-color: #444; /* Optional background for the header */
         }
-        header h1 {
-            font-size: 3em;
+        header h2 {
+            font-size: 2em;
             margin: 0;
+            text-align: center;
         }
         header p {
             font-size: 1.2em;
-            margin-top: 10px;
+            text-decoration:underline;
+            margin-top: 70px;
+            font-weight: bolder;
+            text-indent: 50px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+            gap: 20px;
+            padding: 0px;
+            justify-items: center;
+        }
+        .image-grid img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+        .image-grid img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
         }
         /* Footer Styling */
         footer {
             color: aliceblue;
             padding: 10px;
             text-align: center;
-            position: fixed;
+            position: relative;
             width: 100%;
             bottom: 0;
+            background-color: black;
         }
 
         /* Media Queries for responsiveness */
@@ -127,14 +162,20 @@
             .image-gallery img {
                 width: 100%; /* Ensure images still take full width */
             }
+            header h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1em;
+            }
         }
 
     </style>
 
 <script>
-    function changeImage(img) {
-        img.src = img.src.includes('shop_basket.png') ? 'basket_hover.png' : 'shop_basket.png';
-    }
+    function changeImage(img, hoverSrc, originalSrc) {
+            img.src = img.src.includes(originalSrc) ? hoverSrc : originalSrc;
+        }
 </script>
 </head>
 <body>
@@ -145,11 +186,23 @@
         <a id="navbar"href="#products">Ürünlerimiz</a>
         <a id="navbar" href="#gallery">Galeri</a>
         <a id="navbar" href="#contact">Bize Ulaşın</a>
-        <a href="#shop" style="margin-left: auto;" onmouseover="changeImage(this.querySelector('.basket-img'))" 
-        onmouseout="changeImage(this.querySelector('.basket-img'))">
-           Sepetim
-           <img src="shop_basket.png" alt="shopping basket" class="basket-img">
-        </a>
+        <div class="icon-container">
+            <a href="#like" onmouseover="changeImage(this.querySelector('.basket-img'), 'like_hover.png', 'like.png')" 
+            onmouseout="changeImage(this.querySelector('.basket-img'), 'like.png', 'like_hover.png')">
+                <img src="like.png" alt="Like" class="basket-img">
+            </a>
+
+            <!-- User Icon -->
+            <a href="#user" onmouseover="changeImage(this.querySelector('.basket-img'), 'user_hover.png', 'user.png')" 
+            onmouseout="changeImage(this.querySelector('.basket-img'), 'user.png', 'user_hover.png')">
+                <img src="user.png" alt="User" class="basket-img">
+            </a>
+            <!-- Shopping Basket Icon -->
+            <a href="#shop" onmouseover="changeImage(this.querySelector('.basket-img'), 'basket_hover.png', 'shop_basket.png')" 
+            onmouseout="changeImage(this.querySelector('.basket-img'), 'shop_basket.png', 'basket_hover.png')">
+                <img src="shop_basket.png" alt="Shopping Basket" class="basket-img">
+            </a>
+        </div>
     </nav>
 
     <!-- Scrollable Image Gallery -->
@@ -164,9 +217,23 @@
     </section>
 
     <header>
-        <h1>Hoş Geldiniz G&D Promosyon Ürünleri'ne</h1>
-        <p>En iyi promosyon ürünleriyle işinizi büyütün.</p>
+        <h2>G&D Promosyon Ürünlerİyle İşİnİzİ büyütün. </h2>
+        
+        <p> En çok satılan ürünlerimiz </p>
+        
     </header>
+<!-- Clickable Image Grid -->
+<section class="image-grid">
+    <a href="#termos"><img src="1.png" alt="Termos"></a>
+    <a href="#plastik_kalem"><img src="3.png" alt="Plastik Kalem"></a>
+    <a href="#bez_canta"><img src="4.png" alt="Bez Çanta"></a>
+    <a href="#anahtarlik"><img src="5.png" alt="Anahtarlık"></a>
+    <a href="#ajanda"><img src="8.png" alt="Ajanda"></a>
+    <a href="#kursun_kalem"><img src="2.png" alt="Kurşun Kalem"></a>
+    <a href="#kupa"><img src="6.png" alt="Kupa"></a>
+    <a href="#takvim"><img src="7.png" alt="Takvim"></a>
+    <a href="#duvar_saati"><img src="9.png" alt="Duvar Saati"></a>
+</section>
 
     <footer>
         <hr>
