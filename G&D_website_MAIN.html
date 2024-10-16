@@ -67,6 +67,9 @@
             margin-left: 5px;
             padding-block: 7px;
             margin-right: 5px;
+            max-width: 30px; /* Limit icon size */
+            max-height: 30px;
+            flex-shrink: 0; /* Prevent shrinking on small screens */
             
         }
         
@@ -118,6 +121,8 @@
             gap: 20px;
             padding: 0px;
             justify-items: center;
+            
+
         }
         .image-grid img {
             width: 100%;
@@ -144,31 +149,22 @@
 
         /* Media Queries for responsiveness */
         @media screen and (max-width: 768px) {
-            nav {
-                flex-direction: column; /* Stack the navbar items vertically */
-                align-items: flex-start;
-            }
-            nav a {
-                margin-right: 0; /* Remove right margin for small screens */
-                margin-bottom: 10px; /* Add spacing between links */
-                font-size: 18px;
-            }
-        }
+    .basket-img {
+        width: 20px; /* Smaller icon size for tablets */
+        height: 20px;
+    }
+}
 
-        @media screen and (max-width: 480px) {
-            nav a {
-                font-size: 16px; /* Adjust font size for very small screens */
-            }
-            .image-gallery img {
-                width: 100%; /* Ensure images still take full width */
-            }
-            header h1 {
-                font-size: 2.5em;
-            }
-            header p {
-                font-size: 1em;
-            }
-        }
+@media screen and (max-width: 480px) {
+    .basket-img {
+        width: 18px; /* Smaller icon size for mobile */
+        height: 18px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* Stack images vertically on small screens */
+    }
+}
 
     </style>
 
@@ -207,10 +203,10 @@
 
     <!-- Scrollable Image Gallery -->
     <section id="gallery" class="image-gallery">
-        <img src="kalem.png" alt="Kalemler">
-        <img src="canta.png" alt="Bez çantalar">
-        <img src="defter.png" alt="Defterler">
         <img src="tshirt.png" alt="T-shirtler">
+        <img src="canta.png" alt="Bez çantalar">
+        <img src="kalem.png" alt="Kalemler">
+        <img src="defter.png" alt="Defterler">
         <img src="kupa.png" alt="Kupalar">
         <img src="takvim.png" alt="Takvimler">
         <img src="altlik.png" alt="Bardak Altliklari">
@@ -224,15 +220,15 @@
     </header>
 <!-- Clickable Image Grid -->
 <section class="image-grid">
-    <a href="#termos"><img src="1.png" alt="Termos"></a>
+    <a href="#tshirt"><img src="tshort.png" alt="T-shirt"></a>
     <a href="#plastik_kalem"><img src="3.png" alt="Plastik Kalem"></a>
     <a href="#bez_canta"><img src="4.png" alt="Bez Çanta"></a>
     <a href="#anahtarlik"><img src="5.png" alt="Anahtarlık"></a>
+    <a href="#termos"><img src="1.png" alt="Termos"></a>
     <a href="#ajanda"><img src="8.png" alt="Ajanda"></a>
     <a href="#kursun_kalem"><img src="2.png" alt="Kurşun Kalem"></a>
     <a href="#kupa"><img src="6.png" alt="Kupa"></a>
     <a href="#takvim"><img src="7.png" alt="Takvim"></a>
-    <a href="#duvar_saati"><img src="9.png" alt="Duvar Saati"></a>
 </section>
 
     <footer>
