@@ -4,75 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G&D Promosyon Ürünleri</title>
+    <link rel="stylesheet" type="text/css" href="CSS_G_D.css">
     <style>
-        body {
-            background-color: black;
-            margin: 0;
-            font-family: 'Fantasy', 'Copperplate', monospace;
-        }
-        /* Basic Navbar Styling */
-        nav {
-            color: aliceblue;
-            background-color:black; /* Optional background for clarity */
-            display: flex; 
-            align-items: center;
-            padding: 15px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000; /* Ensure navbar is always on top */
-            box-sizing: border-box; /* Ensure padding doesn't affect width */
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-        nav img {
-            margin-right: 20px;
-            max-width: 250px; /* Set a max width for smaller screens */
-            width: 100%; /* Make logo responsive */
-        }
-        nav a {
-            color: aliceblue;
-            text-decoration: none;
-            margin-right: 20px;
-            font-size: 21px;
-            display: flex;
-            align-items: center;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            
-             
-        }
-        #navbar{
-            padding-block: 12px;
-            padding-left: 5px; padding-right: 5px;
-
-        }
-
-        /* Hover effects for navbar links */
-        nav a:hover {
-            text-decoration: underline;
-            color: black;
-            background-color: aliceblue;
-        }
-
-        .icon-container {
-            margin-left: auto; /* Push the icons to the right */
-            display: flex;
-            gap: 6px; /* Space between icons */
-            align-items: center;
-        }
-
-        .basket-img {
-            width: 30px;
-            height: 30px;
-            margin-left: 5px;
-            padding-block: 7px;
-            margin-right: 5px;
-            max-width: 30px; /* Limit icon size */
-            max-height: 30px;
-            flex-shrink: 0; /* Prevent shrinking on small screens */
-            
-        }
-        
         /* Responsive Image Gallery */
         .image-gallery {
             display: block;
@@ -136,35 +69,6 @@
             transform: scale(1.05);
             cursor: pointer;
         }
-        /* Footer Styling */
-        footer {
-            color: aliceblue;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-            background-color: black;
-        }
-
-        /* Media Queries for responsiveness */
-        @media screen and (max-width: 768px) {
-    .basket-img {
-        width: 20px; /* Smaller icon size for tablets */
-        height: 20px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .basket-img {
-        width: 18px; /* Smaller icon size for mobile */
-        height: 18px;
-    }
-
-    .image-grid {
-        grid-template-columns: 1fr; /* Stack images vertically on small screens */
-    }
-}
 
     </style>
 
@@ -176,7 +80,7 @@
 </head>
 <body>
     <nav>
-        <img src="G_D_logo.png" alt="G&D Logo">
+        <img src="G_D_logo.png" alt="G&D Logo"  class="logo">
         <a id="navbar" href="#main">Anasayfa</a>
         <a id="navbar" href="#about">Hakkımızda</a>
         <a id="navbar"href="#products">Ürünlerimiz</a>
@@ -213,7 +117,7 @@
     </section>
 
     <header>
-        <h2>G&D Promosyon Ürünlerİyle İşİnİzİ büyütün. </h2>
+        <h2>G&D PROMOSYON ÜRÜNLERİYLE İŞİNİZİ BÜYÜTÜN. </h2>
         
         <p> En çok satılan ürünlerimiz </p>
         
@@ -233,7 +137,7 @@
 
     <footer>
         <hr>
-        <p>&copy; 2024 G&D Promosyon Ürünleri LTD. Tüm hakları saklıdır.</p>
+        <p>&copy; 2024 G&D Promosyon Ürünlerİ LTD. Tüm hakları saklıdır.</p>
     </footer>
 
 </body>
