@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-shirtler</title>
+    <link rel="stylesheet" type="text/css" href="CSS_G_D.css">
+    <style>
+        /* Responsive Image Gallery */
+        .image-gallery {
+            display: block;
+            overflow-x: scroll;
+            white-space: nowrap;
+            padding: 20px;
+            margin: 100px 0 20px 0;
+            /* Space between navbar and gallery */
+        }
+
+        .image-gallery img {
+            width: 100%;
+            /* Make the image responsive */
+            height: auto;
+            /* Maintain the aspect ratio */
+            max-width: 500px;
+            object-fit: cover;
+            margin-right: 15px;
+            margin-top: 30px;
+            ;
+            border: 3px solid black;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        header {
+
+            color: aliceblue;
+            margin-top: 120px;
+            padding: 40px 20px;
+        }
+
+        header h2 {
+            font-size: 2em;
+            margin: 0;
+            text-align: center;
+        }
+
+        header p {
+            font-size: 1.2em;
+            text-decoration: underline;
+            margin-top: 70px;
+            font-weight: bolder;
+            text-indent: 50px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Always 3 columns */
+            gap: 20px;
+            padding: 0px;
+            justify-items: center;
+        }
+
+        .image-grid img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background: rgba(0, 0, 0, 0.796);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .product-card:hover .product-info {
+            opacity: 50;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-info h3 {
+            margin: 0;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .product-info p {
+            margin: 5px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <img src="G_D_logo.png" alt="G&D Logo" class="logo">
+        <a id="navbar" href="#main">Anasayfa</a>
+        <a id="navbar" href="#about">Hakkımızda</a>
+        <a id="navbar" href="#products">Ürünlerimiz</a>
+        <a id="navbar" href="#gallery">Galeri</a>
+        <a id="navbar" href="#contact">Bize Ulaşın</a>
+        <div class="icon-container">
+            <a href="#like" onmouseover="changeImage(this.querySelector('.basket-img'), 'like_hover.png', 'like.png')"
+                onmouseout="changeImage(this.querySelector('.basket-img'), 'like.png', 'like_hover.png')">
+                <img src="like.png" alt="Like" class="basket-img">
+            </a>
+
+            <!-- User Icon -->
+            <a href="#user" onmouseover="changeImage(this.querySelector('.basket-img'), 'user_hover.png', 'user.png')"
+                onmouseout="changeImage(this.querySelector('.basket-img'), 'user.png', 'user_hover.png')">
+                <img src="user.png" alt="User" class="basket-img">
+            </a>
+            <!-- Shopping Basket Icon -->
+            <a href="#shop"
+                onmouseover="changeImage(this.querySelector('.basket-img'), 'basket_hover.png', 'shop_basket.png')"
+                onmouseout="changeImage(this.querySelector('.basket-img'), 'shop_basket.png', 'basket_hover.png')">
+                <img src="shop_basket.png" alt="Shopping Basket" class="basket-img">
+            </a>
+        </div>
+    </nav>
+
+
+    <header>
+        <h2>T-SHIRTLER</h2>
+    </header>
+
+
+    <!-- Product Section -->
+    <section class="image-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="bisiklet_yaka.jpg" alt="Bisiklet Yaka T-shirt">
+            <div class="product-info">
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p> <p></p><p></p><p></p><p></p><p></p><p></p>
+                <h3>Bisiklet Yaka T-shirt</h3>
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p><p></p>
+                <!-- Bunlar degistirilecek-->
+                <p>Renkler: Beyaz, Siyah, Gri</p> 
+                <p>Bedenler: S, M, L, XL, XXL</p>
+                
+                
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="polo.jpg" alt="Polo Yaka T-shirt">
+            <div class="product-info">
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p> <p></p><p></p><p></p><p></p><p></p><p></p>
+                <h3>Polo Yaka T-shirt</h3>
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p><p></p>
+                <!-- Bunlar degistirilecek-->
+                <p>Renkler: Beyaz, Lacivert</p>
+                <p>Bedenler: S, M, L, XL, XXL</p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <header>
+        <h2  style="font-size: 25px; margin-top: -70px;">BU ÜRÜNLER DE İLGİNİZİ ÇEKEBİLİR</h2>
+    </header>
+
+    <section class="image-grid">
+        <!-- Product 1.a -->
+        <div class="product-card">
+            <img src="polar.jpg" alt="Polar">
+            <div class="product-info">
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p> <p></p><p></p><p></p><p></p><p></p><p></p>
+                <h3>Polar</h3>
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p><p></p>
+                <!-- Bunlar degistirilecek-->
+                <p>Renkler: Lacivert</p> 
+                <p>Bedenler: S, M, L, XL, XXL</p>
+                
+                
+            </div>
+        </div>
+
+        <!-- Product 2.a -->
+        <div class="product-card">
+            <img src="yelek.jpg" alt="Yelek">
+            <div class="product-info">
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p> <p></p><p></p><p></p><p></p><p></p><p></p>
+                <h3>Yelek</h3>
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p><p></p>
+                <!-- Bunlar degistirilecek-->
+                <p>Renkler: Beyaz, Lacivert</p>
+                <p>Bedenler: S, M, L, XL, XXL</p>
+
+            </div>
+        </div>
+
+         <!-- Product 3.a -->
+         <div class="product-card">
+            <img src="sapka.jpg" alt="Koton Sapka">
+            <div class="product-info">
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p> <p></p><p></p><p></p><p></p><p></p><p></p>
+                <h3>Koton Şapka</h3>
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p><p></p>
+                <!-- Bunlar degistirilecek-->
+                <p>Renkler: Kirmizi</p> 
+                
+            </div>
+        </div>
+
+        <!-- Product 1.b -->
+        <div class="product-card">
+            <img src="bere.jpg" alt="Bere Takim">
+            <div class="product-info">
+                <p> </p> 
+                <p></p> <p></p><p></p>
+                <p></p> <p></p><p></p><p></p><p></p><p></p><p></p>
+                <h3>Büzgülü Bere <p> </p>ve <p></p> Atki Takimi</h3>
+                <p> </p> <p></p><p></p>
+                <p></p>
+
+                <!-- Bunlar degistirilecek-->
+                <p>Renkler: Beyaz, Lacivert</p>
+                
+
+            </div>
+        </div>
+
+         <!-- Product 2.b -->
+         <div class="product-card">
+            <img src="yagmurluk.jpg" alt="Yagmurluk">
+            <div class="product-info">
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p> <p></p><p></p><p></p><p></p><p></p><p></p>
+                <h3>Yağmurluk</h3>
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p><p></p>
+                <!-- Bunlar degistirilecek-->
+                <p>Renkler: Lacivert</p> 
+                <p>Bedenler: Standart Beden XL</p>
+                
+                
+            </div>
+        </div>
+
+        <!-- Product 3.b -->
+        <div class="product-card">
+            <img src="eldiven.jpg" alt="Eldiven">
+            <div class="product-info">
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p> <p></p><p></p><p></p><p></p><p></p><p></p>
+                <h3>Polar Eldiven</h3>
+                <p> </p> <p></p><p></p>
+                <p></p> <p></p><p></p>
+                <p></p><p></p>
+                <!-- Bunlar degistirilecek-->
+                <p>Renkler: Beyaz, Lacivert</p>
+                
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <hr>
+        <p>&copy; 2024 G&D Promosyon Ürünlerİ LTD. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+
+</html>
